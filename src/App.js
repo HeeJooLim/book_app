@@ -1,50 +1,42 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import "./App.css";
-import Book from "./components/Book";
+import { BrowserRouter, Route, Link } from "react-router-dom";
+import Main from "./components/Main";
+import BookDetail from "./components/BookDetail";
 
 function App() {
-  const authKey =
-    "BAFFE0F20C16E8212EED004AF1F838B029C0047BAF2FEF4FB9061AA86FF297F5";
-  const output = "json";
-  const categoryId = "100";
-
-  const [isLoading, setIsLoading] = useState(true);
-  const [books, setBook] = useState([]);
-
-  const getBooks = async() => {
-    const _books = await axios.get("/api/bestSeller.api", {
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      params: { key: authKey, categoryId: categoryId, output: output },
-    });
-
-    console.log(_books);
-    setBook(_books.data.item);
-    setIsLoading(false);
-  }
-
-  useEffect(() => {
-    getBooks();
-  }, []);
-
-
   return (
-    <div className="container">
+    <BrowserRouter>
+      <nav className="navbar navbar-expand navbar-dark bg-dark">
+        <Link to="/">
+          <span className="navbar-brand">📕📗📘 2020 Book Application 📙📓📒</span>
+        </Link>
+
+        <div className="collapse navbar-collapse" id="navbarsExample02">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item active">
+              <Link to="/">
+                <span className="nav-link">
+                  Home😎 <span className="sr-only">(current)</span>
+                </span>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/BookDetail">
+                <span className="nav-link">How about this Book?🤷‍♀️</span>
+              </Link>
+            </li>
+          </ul>
+          <form className="form-inline my-2 my-md-0">
+            <input className="form-control" type="text" placeholder="Search" />
+          </form>
+        </div>
+      </nav>
+
       <div>
-        {books.map((book) => (
-          <Book
-            key={book.itemId}
-            itemId={book.itemId}
-            categoryId={book.categoryId}
-            categoryName={book.categoryName}
-            title={book.title}
-            author={book.author}
-            description= {book.description}
-            coverUrl={book.coverLargeUrl}
-          />
-        ))}
+        <Route exact path="/" component={Main} />
+        <Route path="/BookDetail" component={BookDetail} />
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
