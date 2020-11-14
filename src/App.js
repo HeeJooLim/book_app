@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
-import Main from "./components/Main";
+import Home from "./components/Home";
+import Review from "./components/Review";
 import BookDetail from "./components/BookDetail";
+
 
 function App() {
   return (
@@ -21,7 +23,7 @@ function App() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/BookDetail">
+              <Link to="/Review">
                 <span className="nav-link">How about this Book?🤷‍♀️</span>
               </Link>
             </li>
@@ -31,9 +33,10 @@ function App() {
           </form>
         </div>
       </nav>
-
+      
       <div>
-        <Route exact path="/" component={Main} />
+        <Route exact path="/" component={Home} />
+        <Route path="/Review" component={Review} />
         <Route path="/BookDetail" component={BookDetail} />
       </div>
     </BrowserRouter>
