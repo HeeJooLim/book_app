@@ -77,7 +77,7 @@ const onChange = (e)=>{
 }
 
  const searchBooks = async() => {
-  const _books = await axios.get("http://book.interpark.com/api/search.api", {
+  const _books = await axios.get("/api/search.api", {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     params: { key: authKey, query : bookName, output: output, start : 1 },
   });
