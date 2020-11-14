@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
 import Review from "./components/Review";
 import BookDetail from "./components/BookDetail";
+import BookSearch from "./components/BookSearch";
 
 
 function App() {
@@ -23,20 +24,17 @@ function App() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/Review">
-                <span className="nav-link">How about this Book?🤷‍♀️</span>
+              <Link to="/BookSearch">
+                <span className="nav-link">Show me the book!👀</span>
               </Link>
             </li>
           </ul>
-          <form className="form-inline my-2 my-md-0">
-            <input className="form-control" type="text" placeholder="Search" />
-          </form>
         </div>
       </nav>
       
       <div>
         <Route exact path="/" component={Home} />
-        <Route path="/Review" component={Review} />
+        <Route path="/BookSearch" component={BookSearch} />
         <Route path="/BookDetail" component={BookDetail} />
       </div>
     </BrowserRouter>
