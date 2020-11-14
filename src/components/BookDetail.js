@@ -69,7 +69,7 @@ const BookDetail = ({ location, history }) => {
 
 
   const regitserReview = () =>{
-    var url = "http://localhost:3001/book/" + itemId + "/review";
+    var url = "http://15.164.166.47:3001/book/" + itemId + "/review";
 
     if(!writer){
       alert("닉네임을 입력해주세요 (❁´◡`❁)");
@@ -111,7 +111,6 @@ const BookDetail = ({ location, history }) => {
           <div className="col-lg-7">
             <h1 className="font-weight-light">{title}</h1>
             <p>
-              {itemId}
               판매가 : {priceSales} | 정가 : {priceStandard} ({discountRate}%
               할인)
             </p>
@@ -138,7 +137,7 @@ const BookDetail = ({ location, history }) => {
           <hr></hr>
           <div className="m-4">
             <h4>후기</h4>
-              <span>{itemId}후기를 자유롭게 작성해주세요 (❁´◡`❁)</span>
+              <span>후기를 자유롭게 작성해주세요 (❁´◡`❁)</span>
             <div>
             <div className="jumbotron mt-3 pt-3">
               <div className="mb-3">

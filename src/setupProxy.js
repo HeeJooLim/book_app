@@ -13,7 +13,7 @@ module.exports = function(app) {
     app.use (
         "/book"
         ,createProxyMiddleware({
-            target : "http://localhost:3001",
+            target : "http://15.164.166.47:3001",
             changeOrigin : true
     }))
 }

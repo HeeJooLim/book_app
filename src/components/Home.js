@@ -35,9 +35,10 @@ function Home() {
   return (
     <div className="container py-5">
       <header className="jumbotron my-4">
-      <h1 className="display-3">A Warm Welcome!</h1>
-      <p className="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-      <a href="#" className="btn btn-primary btn-lg">Call to action!</a>
+      <h1 className="display-3">HAPPY BOOK DAY (●'◡'●)</h1>
+      <br/>
+      <p className="lead">베스트셀러와 독서 검색을 통해 다양하고 재미있는 책을 만나보세요!</p>
+      <p>* 이 사이트는 '인터파크'에서 제공하는 데이터를 기준으로 정보가 제공됩니다.</p>
     </header>
       <hr/>
       
