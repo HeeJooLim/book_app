@@ -17,8 +17,8 @@ function Home() {
   
 
   const getBooks = async() => {
-    const _books = await axios.get("/api/bestSeller.api", {
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    const _books = await axios.get("http://book.interpark.com/api/bestSeller.api", {
+      headers: { "Content-Type": "application/x-www-form-urlencoded", "Access-Control-Allow-Origin": "*" },
       params: { key: authKey, categoryId: categoryId, output: output },
     });
 
